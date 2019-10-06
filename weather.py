@@ -4,7 +4,7 @@ def weather_response(location, API_key):#Function for getting the json string
 	url =urllib.request.urlopen('url till location'+location+'&APPID='+API_key)
 	json = url.read()#.decode('utf-8')
 	return str(json)
-def has_error(json,location):
+def has_error(json,location): #has error or not
 	json=str(json)
 	if json == str(b'{"cod":"404","message":"city not found"}'):
 		print("error 404,city not found")
