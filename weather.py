@@ -43,7 +43,7 @@ def get_humidity(json,n=0,t='03:00:00'):
 	humidity = sliced_1[humidity_index:finding_comma]
 	humidity = float(humidity)
 	return humidity
-def get_pressure(json,n=0,t='03:00:00'):
+def get_pressure(json,n=0,t='03:00:00'): # returns the pressure
 	date = (datetime.datetime.now().date())+ (datetime.timedelta(days =n))
 	date = str(date)
 	t = date+' '+t
@@ -55,7 +55,7 @@ def get_pressure(json,n=0,t='03:00:00'):
 	pressure = sliced_1[pressure_index:finding_comma]
 	pressure = float(pressure)
 	return pressure
-def get_sealevel(json,n=0,t='03:00:00'):
+def get_sealevel(json,n=0,t='03:00:00'): # returns the sea level
 	date = (datetime.datetime.now().date())+ (datetime.timedelta(days =n))
 	date = str(date)
 	t = date+' '+t
@@ -67,7 +67,7 @@ def get_sealevel(json,n=0,t='03:00:00'):
 	sea_level = sliced_1[sea_level_index:finding_comma]
 	sea_level = float(sea_level)
 	return sea_level
-def get_wind(json,n=0,t='03:00:00'):
+def get_wind(json,n=0,t='03:00:00'): # returns the wind condition
 	date = (datetime.datetime.now().date())+ (datetime.timedelta(days =n))
 	date = str(date)
 	t = date+' '+t
