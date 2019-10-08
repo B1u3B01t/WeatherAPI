@@ -4,9 +4,9 @@ def weather_response(location, API_key):#Function for getting the json string
 	url =urllib.request.urlopen('url till location'+location+'&APPID='+API_key)
 	json = url.read()#.decode('utf-8')
 	return str(json)
-def has_error(json,location):
+def has_error(json,location): # return False if no error found and True if error is found
 	json=str(json)
-	if json == str(b'{"cod":"404","message":"city not found"}'):
+	if json == str(b'{"cod":"404","message":"city not found"}'): # checking if the api gives an error
 		print("error 404,city not found")
 		return None
 	else:
@@ -19,7 +19,7 @@ def has_error(json,location):
 			return True
 		else:
 			return False
-def get_temperature(json,n=0,t='03:00:00'):
+def get_temperature(json,n=0,t='03:00:00'): # returns the temperature
 	date = (datetime.datetime.now().date())+ (datetime.timedelta(days =n))
 	date = str(date)
 	t = date+' '+t
@@ -31,7 +31,7 @@ def get_temperature(json,n=0,t='03:00:00'):
 	temp = sliced_1[temp_index:finding_comma]
 	temp = float(temp)
 	return temp	
-def get_humidity(json,n=0,t='03:00:00'):
+def get_humidity(json,n=0,t='03:00:00'): #return the humidity
 	date = (datetime.datetime.now().date())+ (datetime.timedelta(days =n))
 	date = str(date)
 	t = date+' '+t
